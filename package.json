@@ -1,0 +1,19 @@
+{
+  "name": "angular-ui-router-jade-fix",
+  "version": "1.0.0",
+  "description": "Displays how to fix the issue with angular-ui router ui-views not showing up using jade templates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dland512/angular-ui-router-jade-fix.git"
+  },
+  "author": "David Land",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dland512/angular-ui-router-jade-fix/issues"
+  },
+  "homepage": "https://github.com/dland512/angular-ui-router-jade-fix#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "pug": "^2.0.0-beta2"
+  }
+}

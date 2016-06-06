@@ -1,0 +1,17 @@
+html(ng-app="myApp")
+    body
+        div(ui-view="")
+        div This solution uses div(ui-view="")
+    script(src="javascripts/angular.min.js")
+    script(src="javascripts/angular-ui-router.min.js")
+    script.
+        var app = angular.module('myApp', ['ui.router'])
+
+        app.config(function($stateProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('inner')
+
+            $stateProvider.state('inner', {
+                url: '/inner',
+                templateUrl: 'inner'
+            })
+        })

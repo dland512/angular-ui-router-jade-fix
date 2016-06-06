@@ -1,0 +1,32 @@
+html(ng-app="myApp")
+    body
+        div(ui-view)
+        div :( This is the broken view.
+        div
+            |You can try the various solutions here:
+            ul
+                li
+                    a(href="solution1") Solution 1
+                    span &nbsp;- doctype html
+                li
+                    a(href="solution2") Solution 2
+                    span &nbsp;- div(class="ui-view")
+                li
+                    a(href="solution3") Solution 3
+                    span &nbsp;- div(ui-view="")
+                li
+                    a(href="solution4") Solution 4
+                    span &nbsp;- &lt;div ui-view&gt;&lt;/div&gt;
+    script(src="javascripts/angular.min.js")
+    script(src="javascripts/angular-ui-router.min.js")
+    script.
+        var app = angular.module('myApp', ['ui.router'])
+
+        app.config(function($stateProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('inner')
+
+            $stateProvider.state('inner', {
+                url: '/inner',
+                templateUrl: 'inner'
+            })
+        })
